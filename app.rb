@@ -11,4 +11,5 @@ end
 post '/' do
 	data = request.body.read
 	"Received #{data}"
+	puts "Received #{data}"
 end
