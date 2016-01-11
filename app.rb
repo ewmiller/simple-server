@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'json'
 
 configure do
 	set :port, '3000'
@@ -9,7 +10,7 @@ get '/' do
 end
 
 post '/' do
-	data = request.body.read
-	"Received #{data}"
-	puts "Received #{data}"
+	data = JSON.parse request.body.read
+	"Received #{data['message']}"
+	puts "Received #{data['message']}"
 end
