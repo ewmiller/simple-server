@@ -10,7 +10,7 @@ get '/' do
 end
 
 post '/' do
-	data = JSON.parse request.body.read
-	"Received #{data['message']}"
-	puts "Received #{data['message']}"
+	data = request.body.read
+	"Received #{data}"
+	puts "Received #{data}"
 end
